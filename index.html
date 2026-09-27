@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TopoDot — Settings Guide</title>
+<meta name="description" content="What every TopoDot watch face setting looks like on the watch.">
+<style>
+  :root {
+    --bg: #0b0e10;
+    --panel: #14181b;
+    --border: #262c30;
+    --text: #e8ecee;
+    --muted: #9aa5ab;
+    --accent: #00ffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+  }
+  header {
+    padding: 48px 20px 24px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  header h1 {
+    margin: 0 0 8px;
+    font-size: 28px;
+    letter-spacing: 0.02em;
+  }
+  header p {
+    margin: 0;
+    color: var(--muted);
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 6px 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--panel);
+  }
+  nav a:hover { border-color: var(--accent); color: var(--accent); }
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+  }
+  section {
+    padding: 48px 0;
+    border-bottom: 1px solid var(--border);
+    scroll-margin-top: 20px;
+  }
+  section:last-child { border-bottom: none; }
+  section h2 {
+    font-size: 20px;
+    margin: 0 0 4px;
+  }
+  section .kicker {
+    color: var(--muted);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+  }
+  section > p.lead {
+    color: var(--muted);
+    max-width: 640px;
+  }
+  .shots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin: 24px 0;
+  }
+  figure {
+    margin: 0;
+    max-width: 260px;
+  }
+  figure img {
+    width: 100%;
+    border-radius: 50%;
+    display: block;
+    background: #000;
+    border: 1px solid var(--border);
+  }
+  figcaption {
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--muted);
+    text-align: center;
+  }
+  .annotated {
+    position: relative;
+    width: 260px;
+    flex: 0 0 260px;
+  }
+  .annotated img {
+    width: 100%;
+    border-radius: 50%;
+    display: block;
+    border: 1px solid var(--border);
+  }
+  .pin {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+    margin-top: -10px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #001417;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .legend {
+    flex: 1 1 260px;
+    min-width: 220px;
+  }
+  .legend ol {
+    margin: 0;
+    padding-left: 20px;
+  }
+  .legend li { margin-bottom: 6px; }
+  .legend .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #001417;
+    font-size: 11px;
+    font-weight: 700;
+    margin-right: 6px;
+  }
+  details {
+    margin-top: 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    background: var(--panel);
+  }
+  details summary { cursor: pointer; color: var(--muted); }
+  .swatches {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  .swatch {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 12px;
+    background: var(--panel);
+    font-size: 13px;
+  }
+  .swatch .dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  .maps {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .maps figure img { border-radius: 12px; }
+  .maps figcaption { font-size: 12px; }
+  code {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 0.9em;
+  }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    padding: 32px 20px 60px;
+  }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>TopoDot — Settings Guide</h1>
+  <p>What each setting in Garmin Connect actually looks like on the watch. Open this page from the "?" next to any TopoDot setting to jump straight to it.</p>
+</header>
+
+<nav>
+  <a href="#sections">Center Sections</a>
+  <a href="#readouts">Bezel Readouts</a>
+  <a href="#rings">Status Rings</a>
+  <a href="#colors">Colors</a>
+  <a href="#units">Units &amp; Numbers</a>
+  <a href="#refresh">Battery &amp; Refresh</a>
+</nav>
+
+<main>
+
+  <section id="sections">
+    <div class="kicker">Center Sections</div>
+    <h2>Top Section / Bottom Section</h2>
+    <p class="lead">The two blocks above and below the time. Each can independently show the weather, the date, or nothing at all — any combination works in either slot.</p>
+    <div class="shots">
+      <figure>
+        <img src="assets/weather-date.png" alt="Weather in the top section, date in the bottom section">
+        <figcaption>Weather (top) + Date (bottom) — the default</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/blank-section.png" alt="Top section set to None, leaving the map visible with no overlay">
+        <figcaption>Top section set to <strong>None</strong> — just the map shows through</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="readouts">
+    <div class="kicker">Bezel Readouts</div>
+    <h2>The six numbers around the edge</h2>
+    <p class="lead">Six independent slots on the bezel, each showing one metric of your choice. Numbered below in the order they appear in Garmin Connect.</p>
+    <div class="shots">
+      <div class="annotated">
+        <img src="assets/weather-date.png" alt="Watch face with six bezel readouts numbered">
+        <div class="pin" style="left:26%;top:17%;">1</div>
+        <div class="pin" style="left:50%;top:5%;">2</div>
+        <div class="pin" style="left:74%;top:17%;">3</div>
+        <div class="pin" style="left:20%;top:84%;">4</div>
+        <div class="pin" style="left:50%;top:93%;">5</div>
+        <div class="pin" style="left:80%;top:84%;">6</div>
+      </div>
+      <div class="legend">
+        <ol>
+          <li><span class="num">1</span> Top Left — <em>Heart Rate</em> shown here</li>
+          <li><span class="num">2</span> Top — <em>Sunrise / Sunset</em> shown here</li>
+          <li><span class="num">3</span> Top Right — <em>Steps</em> shown here</li>
+          <li><span class="num">4</span> Bottom Left — <em>Calories</em> shown here</li>
+          <li><span class="num">5</span> Bottom — <em>Distance</em> shown here</li>
+          <li><span class="num">6</span> Bottom Right — <em>Altitude</em> shown here</li>
+        </ol>
+        <details>
+          <summary>Full metric list</summary>
+          <p>Heart Rate, Steps, Battery, Distance, Calories, Floors Climbed, Temperature, Feels Like, Humidity, Wind, Rain, UV Index, Body Battery, Recovery Time, Stress, Sleep Score, High/Low Temp, Sunrise/Sunset, Planned Sleep/Wake, Altitude, Pulse Ox, Skin Temp, Pressure, Training Intensity, Weekly Run/Bike Distance, Training Status, Golf, Respiration, Notifications, or blank. A metric shows <code>--</code> until your watch has data for it, and some (Sleep Score, Training Status, Golf, Run/Bike Distance, Planned Sleep/Wake) need a watch model that tracks them.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="rings">
+    <div class="kicker">Status Rings</div>
+    <h2>Left Ring / Right Ring</h2>
+    <p class="lead">Two arcs that sweep around the sides of the face, each filling from 0–100% of whatever it's tracking.</p>
+    <div class="shots">
+      <div class="annotated">
+        <img src="assets/weather-date.png" alt="Watch face with left and right status rings labeled">
+        <div class="pin" style="left:9%;top:62%;">L</div>
+        <div class="pin" style="left:91%;top:38%;">R</div>
+      </div>
+      <div class="legend">
+        <ol>
+          <li><span class="num">L</span> Left Ring — <em>Battery</em> shown here (white)</li>
+          <li><span class="num">R</span> Right Ring — <em>Stress</em> shown here (cyan)</li>
+        </ol>
+        <details>
+          <summary>Full ring options</summary>
+          <p>Body Battery, Stress, Steps Goal %, Battery, Sleep Score, or blank (hides the ring entirely).</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="colors">
+    <div class="kicker">Colors</div>
+    <h2>Every color picker uses the same 10 colors</h2>
+    <p class="lead">Time, AM/PM, readouts, sections and rings all pick from this same palette. A readout or section's icon and secondary text automatically use a slightly dimmer shade of whatever color you pick.</p>
+    <div class="swatches">
+      <span class="swatch"><span class="dot" style="background:#FFFFFF"></span>White</span>
+      <span class="swatch"><span class="dot" style="background:#AAAAAA"></span>Light Gray</span>
+      <span class="swatch"><span class="dot" style="background:#FFFF00"></span>Yellow</span>
+      <span class="swatch"><span class="dot" style="background:#FF8000"></span>Amber</span>
+      <span class="swatch"><span class="dot" style="background:#44DDAA"></span>Teal</span>
+      <span class="swatch"><span class="dot" style="background:#A8E8CC"></span>Mint Green</span>
+      <span class="swatch"><span class="dot" style="background:#00FFFF"></span>Cyan</span>
+      <span class="swatch"><span class="dot" style="background:#00FF00"></span>Green</span>
+      <span class="swatch"><span class="dot" style="background:#0088FF"></span>Blue</span>
+      <span class="swatch"><span class="dot" style="background:#FF0000"></span>Red</span>
+    </div>
+
+    <h2 style="margin-top:40px;">Map Color</h2>
+    <p class="lead">Recolors the map's major contour lines (the bold ones). This is a separate picker — it offers the same 10 colors, minus Mint Green.</p>
+    <div class="maps">
+      <figure><img src="assets/maps/map_cyan.png" alt="Map with cyan contour lines"><figcaption>Cyan (default)</figcaption></figure>
+      <figure><img src="assets/maps/map_white.png" alt="Map with white contour lines"><figcaption>White</figcaption></figure>
+      <figure><img src="assets/maps/map_lightgray.png" alt="Map with light gray contour lines"><figcaption>Light Gray</figcaption></figure>
+      <figure><img src="assets/maps/map_yellow.png" alt="Map with yellow contour lines"><figcaption>Yellow</figcaption></figure>
+      <figure><img src="assets/maps/map_amber.png" alt="Map with amber contour lines"><figcaption>Amber</figcaption></figure>
+      <figure><img src="assets/maps/map_teal.png" alt="Map with teal contour lines"><figcaption>Teal</figcaption></figure>
+      <figure><img src="assets/maps/map_green.png" alt="Map with green contour lines"><figcaption>Green</figcaption></figure>
+      <figure><img src="assets/maps/map_blue.png" alt="Map with blue contour lines"><figcaption>Blue</figcaption></figure>
+      <figure><img src="assets/maps/map_red.png" alt="Map with red contour lines"><figcaption>Red</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="units">
+    <div class="kicker">Units &amp; Numbers</div>
+    <h2>Distance, Temperature &amp; count abbreviations</h2>
+    <p class="lead"><strong>Distance Unit</strong> switches km/mi for distance, weekly run/bike distance, and altitude. <strong>Temperature Unit</strong> switches °C/°F for weather, feels-like, high/low, and skin temperature.</p>
+    <p class="lead"><strong>Calorie / Step Abbreviation</strong> sets how big a count has to get before it switches from a full number to a rounded "K" — e.g. with the 10,000 setting, 9,999 shows in full but 12,000 shows as <code>12K</code>.</p>
+  </section>
+
+  <section id="refresh">
+    <div class="kicker">Battery &amp; Refresh</div>
+    <h2>Data Refresh Interval</h2>
+    <p class="lead">How often the bezel readouts and status rings pull fresh data. The time itself always updates every second while your wrist is raised — this only controls the slower-moving numbers around it. Longer intervals save battery.</p>
+  </section>
+
+</main>
+
+<footer>
+  TopoDot is a free Garmin Connect IQ watch face. This page has no source data of its own — it's a visual reference for the settings inside the Garmin Connect app.
+</footer>
+
+</body>
+</html>
